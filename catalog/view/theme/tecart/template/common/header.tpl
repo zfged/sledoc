@@ -226,61 +226,7 @@ DD_belatedPNG.fix('#logo img');
 
 
 
-</script>
 
-<script type="application/ld+json">
-
-{
-
-  "@context": "http://schema.org/",
-
-  "@type": "Product",
-
-  "name": "IP видеодомофон Commax CIOT-700M",
-
-  "image": [
-
-    "https://sledoc.com.ua/image/cache/data/commax/CIOT-700M-250x250.jpg"
-
-   ],
-
-  "description": "Купить IP видеодомофон Commax CIOT-700M в интернет магазине Sledoc.com.ua недорого. Лучшая цена. Доставка по Украине. Тел. (044) 227-20-67; (098) 952-43-21; (095) 720-43-21; (093) 491-43-21",
-
-  "mpn": "",
-
-  "brand": {
-
-    "@type": "Thing",
-
-    "name": "Commax"
-
-  },
-
-  "offers": {
-
-    "@type": "Offer",
-
-   "url": "https://example.com/oh-yeah-one-bar-oh-yeah-one-bar",
-
-    "priceCurrency": "UAH",
-
-    "price": "7384",
-
-    "availability": "http://schema.org/InStock",
-
-    "seller": {
-
-      "@type": "Organization",
-
-      "name": "Интернет-магазин систем безопасности Следок"
-
-    }
-
-  }
-
-}
-
-</script>
 			  
 </head>
 <body>
