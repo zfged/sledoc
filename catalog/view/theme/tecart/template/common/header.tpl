@@ -83,6 +83,9 @@ DD_belatedPNG.fix('#logo img');
 
 </script>
 
+
+<script type="application/ld+json">
+
 {
 
  "@context": "http://schema.org",
@@ -94,6 +97,8 @@ DD_belatedPNG.fix('#logo img');
  "logo": "https://sledoc.com.ua/image/data/logo.png"
 
 }
+
+</script>
 
 <script type="application/ld+json">
 
@@ -213,34 +218,16 @@ DD_belatedPNG.fix('#logo img');
 
 <span itemscope itemtype="http://schema.org/Organization">
 
- <link itemprop="url" href="https://sitename.com">
+ <link itemprop="url" href="https://sledoc.com.ua">
 
  <a itemprop="sameAs" href="https://plus.google.com/101244492110591500905?rel=author/">Google+</a>
 
 </span>
 
-<script type="application/ld+json">
 
-{
 
-  "@context":"http://schema.org",
 
-  "@type":"ItemList",
-
-  "itemListElement":[
-
-    {
-
-      "@type":"ListItem",
-
-      "position":1,
-
-      "url":"https://sledoc.com.ua/komplekt-videodomofona-atis-ad-430-kit-box"
-
-    },
-
-    {
-
+<<<<<<< HEAD
       "@type":"ListItem",
 
       "position":2,
@@ -319,6 +306,9 @@ DD_belatedPNG.fix('#logo img');
 
 </script>
 
+=======
+			  
+>>>>>>> aaa02b9be4e4dfda1448b661368e6f627f652eb1
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
