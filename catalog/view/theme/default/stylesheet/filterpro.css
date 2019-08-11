@@ -1,0 +1,104 @@
+#filterpro .option_box {
+    display: inline-block;    
+    margin: 5px 0;
+    vertical-align: top;
+    width: 100%;
+}
+
+#filterpro .price_limit {
+    border: 0;
+    width: 100%;
+}
+
+#filterpro .ui-widget-header {
+    background: none repeat scroll 0 0 #23a4e7;
+    border: 0 none;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#filterpro select {
+    width: 126px;
+}
+
+#filterpro .ui-state-hover, #filterpro .ui-state-focus, #filterpro .ui-state-active {
+    border: 2px solid #008DD3;
+    box-shadow: 0 0 5px #1588C1;
+    background: none repeat scroll 0 0 #f0fbf9;
+}
+
+#filterpro .price_slider {
+    padding: 9px  12px 9px 15px !important; 
+    width: 180px!important;
+}
+
+#filterpro .price_slider  input {
+    background: #FFFFFF;
+    margin: 0 6px 12px 6px;
+    width: 48px;
+    padding: 3px;
+    border: 1px solid #CDE8FA;
+    font-size: 14px;    
+    text-align: center;
+}
+
+#filterpro .option_values {
+    padding-top: 5px;
+}
+
+#filterpro .option_name, #filterpro .attribute_group_name {
+    background: url(/image/arrow-down.png) no-repeat right 7px top 7px #E3F3FC;
+    border-top: 1px solid #cde8fa;
+    border-bottom: 1px solid #cde8fa;
+    cursor: pointer;
+    padding: 5px  5px  6px  12px;
+    font-weight: 600;
+    font-size: 13px;
+}
+#filterpro .attribute_group_name{
+    padding-left: 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#filterpro .hided {
+    cursor: pointer;
+    background: url(/image/arrow.png)  no-repeat right 7px top 7px #E3F3FC;
+    border-top: 1px solid #cde8fa;
+    border-bottom: 1px solid #cde8fa;
+}
+
+#filterpro_box .clear_filter {
+    border-bottom: 1px dashed;
+    text-decoration: none;
+    float: right;
+    color: #555;
+}
+
+#filterpro .collapsible{
+    max-height: 240px;
+    width: 196px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 6px 6px 0px 6px ;
+}
+#filterpro img {
+    cursor: pointer;
+    margin: 2px
+}
+
+#filterpro img.selected {
+    border: 2px solid;
+    margin: 0;
+}
+#column-left + #column-right + #content .product-grid > div.loadmask {
+    width: 100%;
+}
+
+#filterpro input {
+    margin: 4px 3px;
+}
+#filterpro table{
+     margin-bottom: 5px;
+}

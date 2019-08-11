@@ -1,0 +1,93 @@
+User-agent: *
+
+Disallow: /*utm_
+
+Disallow: /*gclid=
+
+Disallow: /admin
+
+Disallow: /download
+
+Disallow: /system
+
+Disallow: /*sort
+
+Disallow: /*?sort=
+
+Disallow: /*&sort=
+
+Disallow: /*order
+
+Disallow: /*limit
+
+Disallow: /*filter
+
+Disallow: /*search
+
+
+User-agent: Googlebot
+
+Disallow: /*utm_
+
+Disallow: /*gclid=
+
+Disallow: /admin
+
+Disallow: /download
+
+Disallow: /system
+
+Disallow: /*sort
+
+Disallow: /*?sort=
+
+Disallow: /*&sort=
+
+Disallow: /*order
+
+Disallow: /*limit
+
+Disallow: /*filter
+
+Disallow: /*search
+
+
+User-agent: Yandex
+
+Disallow: /*utm_
+
+Disallow: /*gclid=
+
+Disallow: /admin
+
+Disallow: /download
+
+Disallow: /system
+
+Disallow: /*sort
+
+Disallow: /*?sort=
+
+Disallow: /*&sort=
+
+Disallow: /*order
+
+Disallow: /*limit
+
+Disallow: /*filter
+
+Disallow: /*search
+
+
+User-agent: YandexImages
+
+Disallow: /
+
+Allow: /pic/
+
+Allow: /images/
+
+
+Host: http://sledoc.com.ua
+
+Sitemap: http://sledoc.com.ua/sitemap.xml

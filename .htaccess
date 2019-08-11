@@ -1,0 +1,203 @@
+# STARTNITRO
+RewriteRule .* - [E=HTTP_IF_MODIFIED_SINCE:%{HTTP:If-Modified-Since}]
+ExpiresActive On
+
+#CSS JS XML TXT - 1 WEEK
+<FilesMatch "\.(xml|txt|css|js)$">
+Header set Cache-Control "max-age=604800, public"
+ExpiresDefault "access plus 1 week"
+</FilesMatch>
+
+#JPG JPEG PNG GIF SWF SVG - 1 MONTH
+<FilesMatch "\.(jpg|jpeg|png|gif|swf|svg|JPG|JPEG|PNG|GIF|SWF|SVG)$">
+Header set Cache-Control "max-age=2682000, public"
+ExpiresDefault "access plus 1 month"
+Header set Last-Modified "Wed, 05 Jun 2009 06:40:46 GMT"
+</FilesMatch>
+
+#OTF WOFF TTF ICO PDF FLV - 1 MONTH
+<FilesMatch "\.(otf|ico|pdf|flv|woff|ttf)$">
+Header set Cache-Control "max-age=2682000, public"
+ExpiresDefault "access plus 1 month"
+</FilesMatch>
+# ENDNITRO
+AddDefaultCharset UTF-8
+# 1.To use URL Alias you need to be running apache with mod_rewrite enabled. 
+
+# 2. In your opencart directory rename htaccess.txt to .htaccess.
+
+# For any support issues please visit: http://www.opencart.com
+
+Options +SymLinksIfOwnerMatch
+
+# Prevent Directoy listing 
+Options -Indexes
+
+# Prevent Direct Access to files
+<FilesMatch "\.(tpl|ini|log)">
+ Order deny,allow
+ Deny from all
+</FilesMatch>
+
+# SEO URL Settings
+RewriteEngine On
+# If your opencart installation does not run on the main web folder make sure you folder it does run in ie. / becomes /shop/ 
+
+RewriteBase /
+RewriteRule ^sitemap.xml$ index.php?route=feed/google_sitemap [L]
+RewriteRule ^googlebase.xml$ index.php?route=feed/google_base [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css)
+RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
+
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^_route_=domofony/videodomofon-kupit/$
+RewriteRule ^(.*)$ http://sledoc.com.ua/domofony/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=door-phones/$
+RewriteRule ^(.*)$ http://sledoc.com.ua/domofony/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=domofony/kupit-domofon/$
+RewriteRule ^(.*)$ http://sledoc.com.ua/domofony/videodomofon-kupit-kiev/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=door-phones/kits-video-intercoms/$
+RewriteRule ^(.*)$ http://sledoc.com.ua/domofony/komplekt-videodomofona/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=remont-videodomofonov$
+RewriteRule ^(.*)$ http://sledoc.com.ua/remont-domofonov-commax? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=remont-videodomofonov-v-kieve$
+RewriteRule ^(.*)$ http://sledoc.com.ua/remont-domofonov-commax? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=domofony/kupit-videodomofon/$
+RewriteRule ^(.*)$ http://sledoc.com.ua/domofony/komplekt-videodomofona/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=kocom-videodomofon$
+RewriteRule ^(.*)$ http://sledoc.com.ua/kupit-videodomofon-kocom? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=domofony/videoglazok/$
+RewriteRule ^(.*)$ http://sledoc.com.ua/domofony/kupit-videoglazok/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=ustanovka-videodomofona$
+RewriteRule ^(.*)$ http://sledoc.com.ua/ustanovka-domofona-tsena/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=domofony/panel-videodomofona/$
+RewriteRule ^(.*)$ http://sledoc.com.ua/domofony/vyzyvnaya-panel-commax/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=domofony-commax$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-domofony? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-arny-avp-05$
+RewriteRule ^(.*)$ http://sledoc.com.ua/arny-avp-05? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-arny-avp-ng100$
+RewriteRule ^(.*)$ http://sledoc.com.ua/arny-avp-ng100? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-arny-avp-ng200$
+RewriteRule ^(.*)$ http://sledoc.com.ua/arny-avp-ng200? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-commax-drc-40k$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-drc-40k? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-commax-drc-4cgn$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-drc-4cgn? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-commax-drc-4cpn2$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-drc-4cpn2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-commax-drc-4u$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-drc-4u? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-commax-drc-4chc$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-drc-4chc? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=color-outdoor-panel-commax-drc-4dc$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-drc-4dc? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-35a$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-35a? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-35u$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-35u? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-35h$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-35h? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-35hm$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-35hm? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-43n$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-43n? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-43q$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-43q? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-kocom-kcv-a374$
+RewriteRule ^(.*)$ http://sledoc.com.ua/kocom-kcv-a374? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-kocom-kcv-a374le$
+RewriteRule ^(.*)$ http://sledoc.com.ua/kocom-kcv-a374le? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-kocom-kcv-a374sd-mono$
+RewriteRule ^(.*)$ http://sledoc.com.ua/kocom-kcv-a374sd-mono? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-kocom-kcv-a374sd$
+RewriteRule ^(.*)$ http://sledoc.com.ua/kocom-kcv-a374sd? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-kocom-kvr-a510$
+RewriteRule ^(.*)$ http://sledoc.com.ua/kocom-kvr-a510? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70k$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70k? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70a$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70a? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-71am$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-71am? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70p$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70p? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70u$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70u? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70um$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70um? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-71um$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-71um? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70ux$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70ux? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-35a-drc-4cpn2$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-35a-drc-4cpn2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-35h-drc-4cpn2$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-35h-drc-4cpn2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-35u-drc-4u$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-35u-drc-4u? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70k-drc-4cpn2$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70k-drc-4cpn2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70a-drc-4cpn2$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70a-drc-4cpn2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70p-drc-4cpn2$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70p-drc-4cpn2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-35hm-drc-4cpn2$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-35hm-drc-4cpn2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-71am-drc-4cpn2$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-71am-drc-4cpn2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70u-drc-4u$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70u-drc-4u? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=videointercom-commax-cdv-70um-drc-4u$
+RewriteRule ^(.*)$ http://sledoc.com.ua/commax-cdv-70um-drc-4u? [R=301,L]
