@@ -1,5 +1,5 @@
 <!--isset_listing_page-->
-<?php echo $header; ?><!--<div class="titletop">!--><h1><?php echo $heading_title; ?></h1>
+<?php var_dump($products); echo $header; ?><!--<div class="titletop">!--><h1><?php echo $heading_title; ?></h1>
 	<div class="breadcrumb">
 		<?php foreach ($breadcrumbs as $breadcrumb) { ?>
 		<?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
