@@ -1,5 +1,6 @@
 <!--isset_listing_page-->
 
+<?php echo $header; ?>
 <?php
 echo '<script type="application/ld+json">';
 echo `{
@@ -23,7 +24,6 @@ echo `]
 </script>`;
 ?>
 
-<?php echo $header; ?>
 <!--<div class="titletop">!-->
 <h1><?php echo $heading_title; ?></h1>
 <div class="breadcrumb">
