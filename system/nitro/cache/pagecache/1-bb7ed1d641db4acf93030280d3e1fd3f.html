@@ -1,4 +1,5 @@
 
+
 <!--isset_listing_page-->
 
 <!DOCTYPE html>
@@ -161,17 +162,9 @@ DD_belatedPNG.fix('#logo img');
 
 </script>
 
-<div itemscope itemtype="http://schema.org/Organization">
 
-<span itemprop="name">Интернет-магазин систем видеонаблюдения и средств безопасности SLEDOC</span>
 
-<span itemprop="email">info.sledok@gmail.com</span>
 
-<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-
-<span itemprop="streetAddress">ул. Тампере, 5, оф. 504</span>
-
-<span itemprop="addressLocality">г. Киев</span>
 
 <script type="application/ld+json">
 
@@ -229,13 +222,7 @@ DD_belatedPNG.fix('#logo img');
 
 </script>
 
-<span itemscope itemtype="http://schema.org/Organization">
 
- <link itemprop="url" href="https://sledoc.com.ua">
-
- <a itemprop="sameAs" href="https://plus.google.com/101244492110591500905?rel=author/">Google+</a>
-
-</span>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -262,7 +249,7 @@ DD_belatedPNG.fix('#logo img');
                                                 ]
         }
     </script>
-?>
+
 
 
 			  
@@ -327,8 +314,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="button-search"></div>
         <input type="text" name="filter_name" value="Поиск" onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
       </div>
-    <div class="links"><a href="https://sledoc.com.ua/">Главная</a><a href="https://sledoc.com.ua/about-company">О компании</a><a href="https://sledoc.com.ua/shipping-and-payment">Доставка и оплата</a>
-      <a href="https://sledoc.com.ua/contacts" rel="author">Контакты</a></div>
+    <div class="links">
+    <a href="https://sledoc.com.ua/">Главная</a>
+    <a href="https://sledoc.com.ua/about-company">О компании</a>
+    <a href="https://sledoc.com.ua/shipping-and-payment">Доставка и оплата</a>
+    <a href="https://sledoc.com.ua/contacts">Контакты</a></div>
 </div>
 <div id="menu">
   <ul>
@@ -503,6 +493,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			 &raquo; <a href="https://sledoc.com.ua/domofony/">Домофоны</a>
 			 &raquo; <a href="https://sledoc.com.ua/domofony/komplekt-videodomofona/">Комплекты домофонов</a>
 	</div>
+<div class="seo-category">
+			  <ul>
+			  					
+									<li><a href="https://sledoc.com.ua/ohrannaja-signalizacija/gsm-signalizacija/">беспроводная gsm сигнализация для дома	</a></li>
+									<li><a href="https://sledoc.com.ua/istochniki-pitanija/akkumuljatory/">автомобильный аккумулятор купить	</a></li>
+									<li><a href="https://sledoc.com.ua/videonablyudenie/komplekty-videonabljudenija/">готовое видеонаблюдение	</a></li>
+									<li><a href="https://sledoc.com.ua/kontrol-dostupa/dvernye-dovodchiki/">купить доводчик на двери	</a></li>
+									<li><a href="https://sledoc.com.ua/kontrol-dostupa/schityvateli/">считыватель кодов	</a></li>
+							  </ul>
+</div>
 <div id="column-left">
     <div id="filterpro_box" class="box">
 <div class="box-heading">Фильтр<div style="height: 15px; float: right;">
@@ -1477,6 +1477,7 @@ $(document).ready(function () {
 	/*$(function() {
 			$('select.styled').customStyle();
 	});
+	
 	*/
 	view = $.cookie('display');
 
@@ -1487,6 +1488,12 @@ $(document).ready(function () {
 	}
 	//
 	-->
+	
+	// A $( document ).ready() block.
+	$( document ).ready(function() {
+		$('#column-left').append('<div class="seo-category">'+$('.seo-category').html()+'</div>')
+		$('.seo-category').first().remove()
+	});
 </script>
 <div style="clear:both"></div>
 <script type="text/javascript"><!--
@@ -1535,19 +1542,11 @@ $(document).ready(function () {
 	<div id="powered">
 	<div xmlns:v="http://rdf.data-vocabulary.org/#">
 
-<span typeof="v:Breadcrumb">
-
-<a href="https://sledoc.com.ua" rel="v:url" property="v:title">Интернет-магазин систем безопасности "Следок"</a> ›› </span>
-
-<span typeof="v:Breadcrumb">
-
-<a href="https://sledoc.com.ua#mahazyn-okhoronnykh-system
-
-" rel="v:url" property="v:title">Магазин охранных систем
-
-</a>
-
-</span>
+<div class="breadcrumb" style="background: #30363b url(../image/footer-bg.png) 0 0 repeat-x">
+			<a href="https://sledoc.com.ua/">Главная</a>
+			 &raquo; <a href="https://sledoc.com.ua/domofony/">Домофоны</a>
+			 &raquo; <a href="https://sledoc.com.ua/domofony/komplekt-videodomofona/">Комплекты домофонов</a>
+	</div>
 
 </div>                      
 		<span itemprop="location" itemscope itemtype="https://schema.org/Place">

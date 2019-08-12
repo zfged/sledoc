@@ -1,6 +1,17 @@
 <!--isset_listing_page-->
 
 <?php echo $header; ?>
+<?php if(file_exists(DIR_APPLICATION . 'seo.txt')){
+					$seoItems  = explode(PHP_EOL, file_get_contents(DIR_APPLICATION . 'seo.txt'));
+					$seoItemsFiltered = array ();
+					while(count($seoItemsFiltered)<5){
+						$key = array_rand($seoItems,1);
+						$item = $seoItems[$key];
+						if(!in_array($item,$seoItemsFiltered)){
+							$seoItemsFiltered[] = $item;
+						}
+					}
+} ?>
 
 <script type="application/ld+json">
 {
@@ -24,6 +35,22 @@
 	<?php foreach ($breadcrumbs as $breadcrumb) { ?>
 		<?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
 	<?php } ?>
+</div>
+<div class="seo-category">
+			  <ul>
+			  	<?php $seoItemsFilteredMap = Array(); foreach($seoItemsFiltered as $item){ 
+					$href = explode('h',$item,2);
+					$href = $href[1];
+					$href = 'h'.$href;
+					$text = explode('h',$item,2);
+					$text = $text[0];
+					$seoItemsFilteredMap[] = Array('href' => $href,'text' => $text);
+				} ?>
+				
+				<?php foreach ($seoItemsFilteredMap as $itemMap) {?>
+					<li><a href="<?php echo $itemMap['href']; ?>"><?php echo $itemMap['text']; ?></a></li>
+				<?php }?>
+			  </ul>
 </div>
 <?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
@@ -111,7 +138,7 @@
 			<div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
 		</div>
 	<?php } ?>
-	<?php if ($description) { ?>
+	<?php if ($description && (int)$pagePagination === 1) { ?>
 		<div class="category-info">
 			<?php if ($thumb) { ?>
 				<div class="image"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" /></div>
@@ -219,6 +246,7 @@
 	/*$(function() {
 			$('select.styled').customStyle();
 	});
+	
 	*/
 	view = $.cookie('display');
 
@@ -229,5 +257,11 @@
 	}
 	//
 	-->
+	
+	// A $( document ).ready() block.
+	$( document ).ready(function() {
+		$('#column-left').append('<div class="seo-category">'+$('.seo-category').html()+'</div>')
+		$('.seo-category').first().remove()
+	});
 </script>
 <?php echo $footer; ?>

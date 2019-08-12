@@ -46,19 +46,11 @@
 	<div id="powered">
 	<div xmlns:v="http://rdf.data-vocabulary.org/#">
 
-<span typeof="v:Breadcrumb">
-
-<a href="https://sledoc.com.ua" rel="v:url" property="v:title">Интернет-магазин систем безопасности "Следок"</a> ›› </span>
-
-<span typeof="v:Breadcrumb">
-
-<a href="https://sledoc.com.ua#mahazyn-okhoronnykh-system
-
-" rel="v:url" property="v:title">Магазин охранных систем
-
-</a>
-
-</span>
+<div class="breadcrumb" style="background: #30363b url(../image/footer-bg.png) 0 0 repeat-x">
+	<?php foreach ($breadcrumbs as $breadcrumb) { ?>
+		<?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+	<?php } ?>
+</div>
 
 </div>                      
 		<span itemprop="location" itemscope itemtype="https://schema.org/Place">

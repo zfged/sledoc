@@ -148,17 +148,9 @@ DD_belatedPNG.fix('#logo img');
 
 </script>
 
-<div itemscope itemtype="http://schema.org/Organization">
 
-<span itemprop="name">Интернет-магазин систем видеонаблюдения и средств безопасности SLEDOC</span>
 
-<span itemprop="email">info.sledok@gmail.com</span>
 
-<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-
-<span itemprop="streetAddress">ул. Тампере, 5, оф. 504</span>
-
-<span itemprop="addressLocality">г. Киев</span>
 
 <script type="application/ld+json">
 
@@ -216,13 +208,7 @@ DD_belatedPNG.fix('#logo img');
 
 </script>
 
-<span itemscope itemtype="http://schema.org/Organization">
 
- <link itemprop="url" href="https://sledoc.com.ua">
-
- <a itemprop="sameAs" href="https://plus.google.com/101244492110591500905?rel=author/">Google+</a>
-
-</span>
 <?php
 if (count($breadcrumbs)>1) { ?>
     <script type="application/ld+json">
@@ -248,7 +234,7 @@ if (count($breadcrumbs)>1) { ?>
         }
     </script>
 <?php } ?>
-?>
+
 
 
 			  
@@ -288,8 +274,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <input type="text" name="filter_name" value="<?php echo $text_search; ?>" onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
     <?php } ?>
   </div>
-    <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="https://sledoc.com.ua/about-company">О компании</a><a href="https://sledoc.com.ua/shipping-and-payment">Доставка и оплата</a>
-      <a href="https://sledoc.com.ua/contacts" rel="author">Контакты</a></div>
+    <div class="links">
+    <a href="<?php echo $home; ?>"><?php echo $text_home; ?></a>
+    <a href="https://sledoc.com.ua/about-company">О компании</a>
+    <a href="https://sledoc.com.ua/shipping-and-payment">Доставка и оплата</a>
+    <a href="https://sledoc.com.ua/contacts">Контакты</a></div>
 </div>
 <?php if ($categories) { ?>
 <div id="menu">

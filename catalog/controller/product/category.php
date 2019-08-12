@@ -27,6 +27,8 @@ class ControllerProductCategory extends Controller {
 		} else { 
 			$page = 1;
 		}	
+		
+		$this->data['pagePagination'] = $page;
 							
 		if (isset($this->request->get['limit'])) {
 			$limit = $this->request->get['limit'];
@@ -346,7 +348,7 @@ class ControllerProductCategory extends Controller {
 			$pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&page={page}');
 		
 			$this->data['pagination'] = $pagination->render();
-			if((int)$page>(int)$product_total || (int)$page === 0){
+			if(((int)$product_total && (int)$page>(int)$product_total) || (int)$page === 0){
                 $this->response->redirect($can_url);
             }
 			$this->data['sort'] = $sort;
@@ -388,7 +390,6 @@ class ControllerProductCategory extends Controller {
 				
 			if (isset($this->request->get['page'])) {
 				$url .= '&page=' . $this->request->get['page'];
-				$this->data['pagePagination'] = $this->request->get['page'];
 			}
 			
 						
@@ -432,4 +433,5 @@ class ControllerProductCategory extends Controller {
   	}
 }
 ?>
+
 

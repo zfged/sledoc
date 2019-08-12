@@ -3,6 +3,40 @@ class ControllerCommonFooter extends Controller {
 	protected function index() {
 		$this->language->load('common/footer');
 		
+		
+			$this->data['breadcrumbs'] = array();
+
+   		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('text_home'),
+			'href'      => $this->url->link('common/home'),
+       		'separator' => false
+   		);
+
+     if (isset($this->request->get['path'])) {
+			$path = '';
+
+			$parts = explode('_', (string)$this->request->get['path']);
+
+			foreach ($parts as $path_id) {
+				if (!$path) {
+					$path = (int)$path_id;
+				} else {
+					$path .= '_' . (int)$path_id;
+				}
+
+				$category_info = $this->model_catalog_category->getCategory($path_id);
+
+				if ($category_info) {
+	       			$this->data['breadcrumbs'][] = array(
+   	    				'text'      => $category_info['name'],
+						'href'      => $this->url->link('product/category', 'path=' . $path),
+        				'separator' => $this->language->get('text_separator')
+        			);
+				}
+			}
+
+		}
+		
 		$this->data['text_information'] = $this->language->get('text_information');
 		$this->data['text_service'] = $this->language->get('text_service');
 		$this->data['text_extra'] = $this->language->get('text_extra');

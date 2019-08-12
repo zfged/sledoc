@@ -1,4 +1,7 @@
 <?php echo $header;?>
+
+				
+				
 <script type="application/ld+json">
 {
   "@context": "http://schema.org/",
@@ -46,6 +49,8 @@
 				<?php } ?>
 			</div>
 			<?php } ?>
+			
+	
 		</div>
 		<?php } ?>
 		<div class="right">
