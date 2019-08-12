@@ -9,6 +9,39 @@ class ControllerCommonHeader extends Controller {
 			$this->data['base'] = $this->config->get('config_url');
 		}
 		
+		$this->data['breadcrumbs'] = array();
+
+   		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('text_home'),
+			'href'      => $this->url->link('common/home'),
+       		'separator' => false
+   		);
+   		
+     if (isset($this->request->get['path'])) {
+			$path = '';
+
+			$parts = explode('_', (string)$this->request->get['path']);
+
+			foreach ($parts as $path_id) {
+				if (!$path) {
+					$path = (int)$path_id;
+				} else {
+					$path .= '_' . (int)$path_id;
+				}
+
+				$category_info = $this->model_catalog_category->getCategory($path_id);
+
+				if ($category_info) {
+	       			$this->data['breadcrumbs'][] = array(
+   	    				'text'      => $category_info['name'],
+						'href'      => $this->url->link('product/category', 'path=' . $path),
+        				'separator' => $this->language->get('text_separator')
+        			);
+				}
+			}
+
+		}
+		
 		$this->data['description'] = $this->document->getDescription();
 		$this->data['keywords'] = $this->document->getKeywords();
 		$this->data['links'] = $this->document->getLinks();	 
@@ -17,6 +50,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['lang'] = $this->language->get('code');
 		$this->data['direction'] = $this->language->get('direction');
 		$this->data['google_analytics'] = html_entity_decode($this->config->get('config_google_analytics'), ENT_QUOTES, 'UTF-8');
+		
 
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
@@ -140,6 +174,8 @@ class ControllerCommonHeader extends Controller {
 			'module/currency',
 			'module/cart'
 		);
+		
+		
 				
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/header.tpl';

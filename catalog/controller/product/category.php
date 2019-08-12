@@ -9,6 +9,7 @@ class ControllerProductCategory extends Controller {
 		
 		$this->load->model('tool/image'); 
 		
+		
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -72,6 +73,8 @@ class ControllerProductCategory extends Controller {
 		$category_info = $this->model_catalog_category->getCategory($category_id);
 	
 		if ($category_info) {
+            $can_url=$this->url->link("product/category","path=".$this->request->get['path']);
+			$this->document->addLink($can_url,"canonical");
 			if ($category_info['seo_title']) {
 		  		$this->document->setTitle($category_info['seo_title']);
 			} else {
@@ -343,7 +346,9 @@ class ControllerProductCategory extends Controller {
 			$pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&page={page}');
 		
 			$this->data['pagination'] = $pagination->render();
-		
+			if((int)$page>(int)$product_total || (int)$page === 0){
+                $this->response->redirect($can_url);
+            }
 			$this->data['sort'] = $sort;
 			$this->data['order'] = $order;
 			$this->data['limit'] = $limit;
@@ -383,7 +388,9 @@ class ControllerProductCategory extends Controller {
 				
 			if (isset($this->request->get['page'])) {
 				$url .= '&page=' . $this->request->get['page'];
+				$this->data['pagePagination'] = $this->request->get['page'];
 			}
+			
 						
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
@@ -425,3 +432,4 @@ class ControllerProductCategory extends Controller {
   	}
 }
 ?>
+

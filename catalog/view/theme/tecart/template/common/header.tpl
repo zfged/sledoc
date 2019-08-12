@@ -223,13 +223,38 @@ DD_belatedPNG.fix('#logo img');
  <a itemprop="sameAs" href="https://plus.google.com/101244492110591500905?rel=author/">Google+</a>
 
 </span>
-
-
+<?php
+if (count($breadcrumbs)>1) { ?>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                <?php $posJDItem = 0;
+                $numItems = count($breadcrumbs);
+                $i = 0;
+                foreach ($breadcrumbs as $breadcrumb) {
+                    $posJDItem++; ?> {
+                        "@type": "ListItem",
+                        "position": <?php echo $posJDItem; ?>,
+                        "name": "<?php echo $breadcrumb['text']; ?>",
+                        "item": "<?php echo $breadcrumb['href']; ?>"
+                    }
+                    <?php if (++$i !== $numItems) {
+                        echo ",";
+                    } ?>
+                <?php } ?>
+            ]
+        }
+    </script>
+<?php } ?>
+?>
 
 
 			  
 </head>
 <body>
+
 <!-- Google Tag Manager (noscript) -->
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CNDXPT"
@@ -291,3 +316,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <?php } ?>
 <div id="notification"></div>
+
