@@ -1,5 +1,7 @@
 <!--isset_listing_page-->
 
+<?php echo $header; ?>
+
 <script type="application/ld+json">
 {
   "@context":"http://schema.org",
@@ -15,8 +17,6 @@
   ]
 }
 </script>
-
-<?php echo $header; ?>
 
 <!--<div class="titletop">!-->
 <h1><?php echo $heading_title; ?></h1>
