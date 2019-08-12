@@ -1,4 +1,30 @@
-<?php echo $header; ?>
+<?php echo $header;?>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "<?php echo $heading_title; ?>",
+  "image": [
+    "<?php echo $popup; ?>"
+   ],
+  "description": "<?php echo $heading_title; ?>",
+  "mpn": "",
+  "brand": {
+    "@type": "Thing",
+    "name": "<?php echo $manufacturer; ?>"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "<?php echo $currency_code; ?>",
+    "price": "<?php echo floatval($price); ?>",
+    "availability": "http://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Интернет-магазин систем безопасности Следок"
+    }
+  }
+}
+</script>
 <div class="breadcrumb">
 	<?php foreach ($breadcrumbs as $breadcrumb) { ?>
 	<?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>

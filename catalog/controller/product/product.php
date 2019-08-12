@@ -2,8 +2,17 @@
 class ControllerProductProduct extends Controller {
 	private $error = array(); 
 	
-	public function index() { 
+	public function index() {
+		if (isset($this->request->post['currency_code'])) {
+      		$this->currency->set($this->request->post['currency_code']);
+   		}
+		
+		
+		$this->language->load('module/currency');
+		
 		$this->language->load('product/product');
+		
+		$this->data['currency_code'] = $this->currency->getCode(); 
 	
 		$this->data['breadcrumbs'] = array();
 
@@ -53,6 +62,23 @@ class ControllerProductProduct extends Controller {
 					'text'	    => $manufacturer_info['name'],
 					'href'	    => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id']),					
 					'separator' => $this->language->get('text_separator')
+				);
+			}
+		}
+		
+		$this->load->model('localisation/currency');
+		 
+		 $this->data['currencies'] = array();
+		 
+		$results = $this->model_localisation_currency->getCurrencies();	
+		
+		foreach ($results as $result) {
+			if ($result['status']) {
+   				$this->data['currencies'][] = array(
+					'title'        => $result['title'],
+					'code'         => $result['code'],
+					'symbol_left'  => $result['symbol_left'],
+					'symbol_right' => $result['symbol_right']				
 				);
 			}
 		}

@@ -1,29 +1,23 @@
 <!--isset_listing_page-->
 
-<?php
-echo '<script type="application/ld+json">';
-echo `{
+<script type="application/ld+json">
+{
   "@context":"http://schema.org",
   "@type":"ItemList",
-  "itemListElement":[`;
-
-$position = 0;
-foreach ($products as $product) {
-	$position++;
-	echo '{';
-	echo '"@type":"ListItem",';
-	echo '"position":' . $position;
-	echo ',';
-	echo '"url":"' . $product['href'] . '"';
-	echo '},';
+  "itemListElement":[
+    <?php $posJDItem = 0 ;$numItems = count($products); $i = 0; foreach ($products as $product) { $posJDItem ++;?>
+    {
+      "@type":"ListItem",
+      "position":<?php echo $posJDItem; ?>,
+      "url":"<?php echo $product['href']; ?>"
+    }<?php if(++$i !== $numItems) { echo ",";   } ?>
+    <?php }?>
+  ]
 }
-
-echo `]
-}
-</script>`;
-?>
+</script>
 
 <?php echo $header; ?>
+
 <!--<div class="titletop">!-->
 <h1><?php echo $heading_title; ?></h1>
 <div class="breadcrumb">
